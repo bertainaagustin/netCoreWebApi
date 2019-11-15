@@ -6,6 +6,9 @@ namespace TodoApi.Mappings
 {
    public class SimpleMappings : Profile
    {
-        public SimpleMappings() => CreateMap<NewTodoItemDTO, TodoItem>();
+        public SimpleMappings() {
+            CreateMap<NewTodoItemDTO, TodoItem>();
+            CreateMap<newActivityDTO, Activity>();
+        }
     }
 }
