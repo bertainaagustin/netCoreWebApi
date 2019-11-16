@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TodoApi.Models;
@@ -15,7 +16,7 @@ namespace TodoApi.Repositories
         }
         public async Task<List<Activity>> GetAllAsync()
         {
-            var activities = await _context.Activities.ToListAsync();
+            var activities = await _context.Activities.OrderByDescending(x=>x.Id).ToListAsync();
             return activities;
         }
         public async Task<Activity> GetAsync(long id)

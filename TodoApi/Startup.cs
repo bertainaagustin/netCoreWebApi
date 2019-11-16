@@ -39,6 +39,7 @@ namespace TodoApi
                  opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             
             services.AddScoped<ITodoRepository, TodoRepository>();
+            services.AddScoped<IActivityRepository, ActivityRepository>();
 
             //===== Add Identity ========
             services.AddIdentity<ApplicationUser, IdentityRole>()

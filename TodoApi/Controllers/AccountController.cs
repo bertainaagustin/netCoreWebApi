@@ -47,7 +47,7 @@ namespace TodoApi.Controllers
                 return GenerateJwtToken(model.Email, appUser);
             }else
             {
-                return Ok(new ErrorMessage("invalid credentials"));
+                return Unauthorized(new ErrorMessage("invalid credentials"));
             }
         }
        
